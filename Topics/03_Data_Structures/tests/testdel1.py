@@ -8,8 +8,8 @@ while count < 10000000: #create a long list
 starttime = time.time()
 count = 0
 while count < 10000000: #delete all items, one by one
-    del lst[0]
-    if count % 10000 == 0:
+    lst.pop(0)
+    if count % 100 == 0:
         now = time.time()
         print(now - starttime, count)
     count += 1

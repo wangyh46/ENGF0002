@@ -378,7 +378,7 @@ Step & Books Eliminated & Books Remaining\\
 \frametitle{Binary search algorithm} 
 
 \begin{itemize}
-\item Define two variables \texttt{start} and \texttt{end} initialized with the indexes of the first element and one past the last element
+\item Define two variables \texttt{start} and \texttt{end}, initialized with the indexes of the first element and one past the last element
 \item Pick the middle element of the range.
   \begin{itemize}
   \item if it is larger than the value sought, target is in lower half of the range.  {\tt end} takes the value of \texttt{middle}.
@@ -391,21 +391,37 @@ Step & Books Eliminated & Books Remaining\\
 
 \end{frame}
 
+\begin{frame}
+\frametitle{The code for binary search.}
 
+        \inputminted[
+                firstline=14,
+                lastline=26,
+                xleftmargin=1.4em,
+                %frame=lines,
+                %framesep=2mm,
+                %baselinestretch=1.2,                                           
+                bgcolor=stone,   
+                fontsize=\footnotesize,
+                %linenos
+        ]{python}{src/binarysearch.py}
 
+\end{frame}
 
 \begin{frame}
 \frametitle{Binary search has $\mathcal{O}(\log n)$ time complexity.}
 
-\vspace{3mm}
-Proof. Consider the size of the range $n = end - start$.  $n = n_0$ at step 0. At each step the size of the range is a fraction $0 < \alpha < 1$ of its previous size, namely $n_i = \alpha \cdot n_{i-1}$.  As we do integer division by 2, $\alpha ~= 0.5$
+\textbf{Proof.} Consider the size of the range $n = end - start$.  $n = n_0$ at step 0. At each step the size of the range is a fraction $0 < \alpha < 1$ of its previous size, namely $n_i = \alpha \cdot n_{i-1}$.  As we do integer division by 2, $\alpha \approx 0.5$
 \begin{align}
-n_i = \alpha \cdot n_{i-1} \Leftrightarrow n_i = \alpha^i \cdot n_{0}
+  n_i &= \alpha \cdot n_{i-1} \\
+  \Leftrightarrow n_i &= \alpha^i \cdot n_{0}
 \end{align}
 After how many steps $i$ will $n_i$ become $1$, and the algorithm end?
 \begin{align}
-\alpha^i \cdot n_{0} = 1 \Leftrightarrow \log (\alpha^i \cdot n_{0}) &= 0 \\
-i \log \alpha + \log n_{0} &= 0 \Leftrightarrow i = \left( - \frac{1}{\log \alpha} \right) \cdot \log n = \mathcal{O}(\log n).
+  \alpha^i \cdot n_{0} &= 1 \\
+  \Leftrightarrow \log (\alpha^i \cdot n_{0}) &= 0 \\
+\Leftrightarrow i \log \alpha + \log n_{0} &= 0 \\
+\Leftrightarrow i &= \left( - \frac{1}{\log \alpha} \right) \cdot \log n = \mathcal{O}(\log n).
 \end{align}
 
 \end{frame}

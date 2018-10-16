@@ -92,7 +92,7 @@ def redraw_bomb(canvas, pos):
 def move_bomb(pos):
     global bomb_falling
     if bomb_falling:
-        pos[1] = pos[1] + 8 * speed
+        pos[1] = pos[1]# + 8 * speed
 
 ''' drop the bomb from the plane at position plane_pos '''
 def drop_bomb(pos, plane_pos):
@@ -229,6 +229,7 @@ def check_bomb(canvas, bomb_pos, building_width, building_heights, building_xpos
         if is_inside_building(building_num, bomb_pos, building_width, building_heights, building_xpos):
             explode()
             shrink_building(canvas, building_num, building_width, building_heights, building_xpos, building_rects)
+    
 
 ''' check the state of the plane each frame '''
 def check_plane(canvas, plane_pos, building_width, building_heights, building_xpos):
