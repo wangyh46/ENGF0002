@@ -63,7 +63,7 @@ Binary search, and a number of other efficient algorithms, rely on sorted sequen
 \vspace{3mm}
 We next study:
 \begin{itemize}
-	\item A sorting algorithm, \emc{bubble sort}.
+	\item A simple sorting algorithm. %, \emc{bubble sort}.
 	\item A better sorting algorithm, \emc{merge sort}.
 	\item The \emc{time complexity} of sorting.
 	\item How to show sorting is \emc{correct}.
@@ -74,17 +74,17 @@ We next study:
 \end{frame}
 
 \begin{frame}
-  \frametitle{Bubble Sort}
+  %\frametitle{Bubble Sort}
   \centering
   \includegraphics[width=70mm]{assets/swapping1-cropped.pdf}
 \end{frame}
 \begin{frame}
-  \frametitle{Bubble Sort}
+  %\frametitle{Bubble Sort}
   \centering
   \includegraphics[width=70mm]{assets/swapping2-cropped.pdf}
 \end{frame}
 \begin{frame}
-  \frametitle{Bubble Sort}
+  %\frametitle{Bubble Sort}
   \centering
   \includegraphics[width=70mm]{assets/swapping3-cropped.pdf}
 \end{frame}
@@ -203,7 +203,7 @@ We next study:
   \includegraphics[width=100mm]{assets/merge-move8-crop.pdf}
 
   \begin{block}{Observation}
-    Merging two \emc{already sorted} lists containing $n$ items only requires $n$ comparisons and moves.
+    Merging two \emc{already sorted} lists containing $n$ items only requires $n-1$ comparisons and $n$ moves.
     \end{block}
 \end{frame}
 
@@ -333,8 +333,8 @@ Algorithm 2. Merge Sort.
 	]{python}{src/mergesort.py}
 
 \begin{itemize}
-\item Python \emc{slicing}: \texttt{items[start:end]} returns the list from index \texttt{start} up to, but not including, index \texttt{end}. If omitted from zero to the length of the list.
-\item Use \texttt{items.copy()} to get a new \emc{copy} of the list (otherwise we'll just modify the original!).
+\item Python \emc{slicing}: \texttt{lst[start:end]} returns the list from index \texttt{start} up to, but not including, index \texttt{end}. If omitted from zero to the length of the list.
+\item Use \texttt{lst.copy()} to get a new \emc{copy} of the list (otherwise we'll just modify the original!).
 \end{itemize}
 
 \end{frame}

@@ -10,11 +10,11 @@ def test_simple_sort10(): # Test edge cases, for 1 or no elements.
 def test_simple_longlist():
     compare = lambda x,y: x <= y
     import random
-    N = 1000
-    L = list(range(N))
-    random.shuffle(L) # Shuffle at random in-place
-    L2 = mergesort(L, compare)
-    assert L2 == list(range(N))
+    n = 1000
+    lst = list(range(n))
+    random.shuffle(lst) # Shuffle at random in-place
+    sorted_lst = mergesort(lst, compare)
+    assert sorted_lst == list(range(n))
 
 
 def mergesort(lst, compare):
