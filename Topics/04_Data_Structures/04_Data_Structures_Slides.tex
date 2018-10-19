@@ -503,7 +503,7 @@ Merge (algorithm 1) only uses `\texttt{<=}' on items within the list to sort:
 		%linenos
 	]{python}{src/mergesort.py}
 
-If the operation greater-or-equal (compare) is supported correctly by the type of object in the list, mergesort will return the correct result.
+If the operation less-than-or-equal (compare) is supported correctly by the type of object in the list, mergesort will return the correct result.
 
 \end{frame}
 
@@ -555,7 +555,7 @@ Strategy: allow the programmer to specify a function that performs a comparison.
 
 	\inputminted[
 		firstline=46,
-		lastline=56,
+		lastline=57,
 		xleftmargin=1.4em,
 		%frame=lines,
 		%framesep=2mm,
