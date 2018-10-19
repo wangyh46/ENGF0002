@@ -407,6 +407,15 @@ class Controller():
         self.buildings = []
         self.model = Model(self);
         self.add_view(View(self.root, self, 0.7))
+
+        #do one round of display before we seed the speed measurement,
+        #or we get a bad first value because it takes time to draw the
+        #window the first time
+        self.model.update()
+        for view in self.views:
+            view.update()
+        self.root.update()
+
         self.lastframe = time()
         self.framecount = 0
 
