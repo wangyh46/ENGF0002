@@ -19,9 +19,9 @@ def task_test():
 def task_build():
     """build cmd """
     return {
-        'actions': ['pdflatex -shell-escape 06_Dynamic_Data_Structures_Slides ;pdflatex -shell-escape 06_Dynamic_Data_Structures_Slides ; bibtex 06_Dynamic_Data_Structures_Slides ; pdflatex -shell-escape 06_Dynamic_Data_Structures_Slides',],
+        'actions': ['pdflatex -shell-escape 07_Dynamic_Data_Structures_Slides ;pdflatex -shell-escape 07_Dynamic_Data_Structures_Slides ; bibtex 07_Dynamic_Data_Structures_Slides ; pdflatex -shell-escape 07_Dynamic_Data_Structures_Slides',],
         'file_dep': ["testreport.txt"] + Python_files +
-                     ["06_Dynamic_Data_Structures_Slides.tex"],
-        'targets': ["06_Dynamic_Data_Structures_Slides.pdf"],
+                     ["07_Dynamic_Data_Structures_Slides.tex"],
+        'targets': ["07_Dynamic_Data_Structures_Slides.pdf"],
         'verbosity': 2,
         }
