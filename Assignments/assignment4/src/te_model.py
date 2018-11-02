@@ -404,7 +404,7 @@ class Model():
             self.__game_over()
         else:
             self.__score = self.__score + scorechange
-            self.__next_block()
+            self.__start_next_block()
 
     def __game_over(self):
         if not self.__is_dummy:
