@@ -20,14 +20,14 @@ Write a better AutoPlayer than the one included with this source.
 
 See the source code in te_controller.py
 
- a - move left
- s - move right
- k - rotate left
- l - rotate right
- space - drop
- y - toggle autoplay
- q - quit
- r - restart
+ * **a** - move left
+ * **s** - move right
+ * **k** - rotate left
+ * **l** - rotate right
+ * *space* - drop
+ * **y** - toggle autoplay
+ * **q** - quit
+ * **r** - restart
  
 ## Hints
 
