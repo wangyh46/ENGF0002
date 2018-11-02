@@ -1,4 +1,4 @@
-#Source code for the Tetris game.
+# Source code for the Tetris game.
 
 To run:
 `python3 tetris.py`
