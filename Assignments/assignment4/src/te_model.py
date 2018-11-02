@@ -211,6 +211,10 @@ class Block():
         self.__y = self.__y + 1
         return (False, 0)
 
+    def get_copy_of_tiles(self):
+        newbitmap = self.__bitmap.clone()
+        return newbitmap.rows
+
 # BlockField holds all the blocks and pieces of blocks that have landed
 class BlockField():
     def __init__(self):
@@ -329,6 +333,9 @@ class Model():
 
     def get_copy_of_tiles(self):
         return self.__blockfield.get_copy_of_tiles()
+
+    def get_falling_block_tiles(self):
+        return self.__falling_block.get_copy_of_tiles()
 
     def init_score(self):
         self.__score = 0
