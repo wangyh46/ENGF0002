@@ -30,3 +30,4 @@ class AutoPlayer():
         if rnd != 0:
             gamestate.rotate(direction)
         gamestate.print_block_tiles()
+        

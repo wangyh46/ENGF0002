@@ -159,6 +159,11 @@ class Block():
         return self.__bitmap.colour
 
     @property
+    def type(self):
+        ''' accessor function associated with getting from the type read-only attribute '''
+        return self.__type
+
+    @property
     def bounding_box(self):
         return self.__bitmap.bounding_box
 
@@ -339,11 +344,22 @@ class Model():
     def falling_block_angle(self):
         return self.__falling_block.angle
 
-    def get_copy_of_tiles(self):
-        return self.__blockfield.get_copy_of_tiles()
+    @property
+    def falling_block_type(self):
+        return self.__falling_block.type
+
+    @property
+    def next_block_type(self):
+        return self.__next_block.type
 
     def get_falling_block_tiles(self):
         return self.__falling_block.get_copy_of_tiles()
+
+    def get_next_block_tiles(self):
+        return self.__next_block.get_copy_of_tiles()
+
+    def get_copy_of_tiles(self):
+        return self.__blockfield.get_copy_of_tiles()
 
     def init_score(self):
         self.__score = 0
