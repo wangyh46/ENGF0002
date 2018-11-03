@@ -230,7 +230,10 @@ class BlockField():
         return self.__tiles
 
     def get_copy_of_tiles(self):
-        return self.__tiles.copy()
+        newtiles = []
+        for row in self.__tiles:
+            newtiles.append(row.copy())
+        return newtiles
 
 
     #check for a collision if the block moves in the direction indicated by xoffset,yoffset
