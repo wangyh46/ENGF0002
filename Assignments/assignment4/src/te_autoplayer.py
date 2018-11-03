@@ -29,4 +29,4 @@ class AutoPlayer():
             direction = Direction.RIGHT
         if rnd != 0:
             gamestate.rotate(direction)
-        gamestate.print_block_tiles()  
+        gamestate.print_block_tiles()

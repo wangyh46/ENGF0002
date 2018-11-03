@@ -29,6 +29,12 @@ class BlockBitmap():
             rows.append(newrow)
         return BlockBitmap(rows, self.colour)
 
+    def get_copy_of_tiles(self):
+        newrows = []
+        for row in self.rows:
+            newrows.append(tuple(row))
+        return newrows
+
     # the bounding box is the position of the top left and bottom
     # right corners of a rectangle that includes the whole shape
     def calculate_bounding_box(self):
@@ -212,8 +218,7 @@ class Block():
         return (False, 0)
 
     def get_copy_of_tiles(self):
-        newbitmap = self.__bitmap.clone()
-        return newbitmap.rows
+        return self.__bitmap.get_copy_of_tiles()
 
 # BlockField holds all the blocks and pieces of blocks that have landed
 class BlockField():
