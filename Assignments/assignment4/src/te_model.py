@@ -232,7 +232,7 @@ class BlockField():
     def get_copy_of_tiles(self):
         newtiles = []
         for row in self.__tiles:
-            newtiles.append(row.copy())
+            newtiles.append(tuple(row))
         return newtiles
 
 
