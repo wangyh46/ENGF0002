@@ -10,7 +10,6 @@ class Controller():
     def __init__(self):
         self.__root = Tk()
         self.__windowsystem = self.__root.call('tk', 'windowingsystem')
-        self.__views = []
         self.__root.bind_all('<Key>', self.key)
         self.__running = True
         self.__score = -1
@@ -64,8 +63,7 @@ class Controller():
 
     def game_over(self):
         self.__lost = True
-        for view in self.__views:
-            view.game_over()
+        self.__view.game_over()
 
     def key(self, event):
         if event.char == ' ':
@@ -83,11 +81,9 @@ class Controller():
         elif event.char == 'y':
             self.__autoplay = not self.__autoplay
             self.__model.enable_autoplay(self.__autoplay)
-            for view in self.__views:
-                view.show_autoplay(self.__autoplay)
+            self.__view.show_autoplay(self.__autoplay)
         elif event.char == 'r':
-            for view in self.__views:
-                view.clear_messages()
+            self.__view.clear_messages()
             self.__lost = False
             self.__model.restart()
             self.__model.enable_autoplay(self.__autoplay)
