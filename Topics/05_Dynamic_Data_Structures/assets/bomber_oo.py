@@ -323,8 +323,6 @@ class Game():
         self.disp = Display(self.root)
         self.root.bind_all('<Key>', self.key)
         self.running = True
-        self.disp.update()
-        self.root.update()
         self.lastframe = time()
         self.framecount = 0
 
